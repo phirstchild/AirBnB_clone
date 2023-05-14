@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """Defines unittests for models/state.py.
 
 Unittest classes:
@@ -187,3 +188,27 @@ class TestState_to_dict(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+=======
+"""The Test suite for the State class of the models.state module"""
+import unittest
+
+from models.base_model import BaseModel
+from models.state import State
+
+
+class TestState(unittest.TestCase):
+    """The test cases for the State class"""
+
+    def setUp(self):
+        self.state = State()
+
+    def test_state_is_a_subclass_of_basemodel(self):
+        self.assertTrue(issubclass(type(self.state), BaseModel))
+
+    def test_attr_is_a_class_attr(self):
+        self.assertTrue(hasattr(self.state, "name"))
+
+    def test_class_attrs(self):
+        self.assertIs(type(self.state.name), str)
+        self.assertFalse(bool(self.state.name))
+>>>>>>> 90afd1871bfebc5ac9b59ab33a9d9f81f0a0bfa9
